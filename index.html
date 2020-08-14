@@ -1,0 +1,355 @@
+<!-- 
+                        -------------------------- GoMyCode JavaScript Checkpoint ---------------------------
+
+  Developer; Fatima Zohra BELABDI
+  Create: 07/08/2020
+  Last Modified: 12/08/2020
+  Resume: 
+
+recreate a shopping cart, in this scenario it’s a cart in which items have already been preselected and from this particular screen the user is able to:
+       
+        * Adjust the quantity of each item through a “+” and “-” .(Done)
+        * Delete items from the cart. (Done)
+        * Like items through a clickable heart that will change color accordingly. (Done)
+        * See the total price adjusted according to quantity and deletions. (Done)
+
+--->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title> Shopping cart </title>
+    <!-- used for clickable heart -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- CSS File -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- JavaScript File -->
+    <script type="text/javascript" src="js/main.js"></script>
+
+</head>
+
+<body>
+
+
+
+    <!-- Semantic Tag Header -->
+    <header>
+
+        <div>
+            <h1 class="cartTitle "> Shopping <span>Cart</span></h1>
+        </div>
+        <div class="headingCart">
+            <h1> Cart ID: <span> 0255687 </span></h1>
+            <a href="#">Continue Shopping</a>
+        </div>
+    </header>
+
+    <!-- Semantic Tag Main -->
+    <main>
+
+
+        <!-- Grid shooping table -->
+        <!-- Use CSS Grid with three columns to style it/ img - description and detail (size, Color) like(icon heart) -->
+        <div id="articles">
+            <div>
+                <!-- First article -->
+                <div class="grid-container " id="article1">
+                    <!-- First column of the Grid -->
+                    <!-- Selected Items  -->
+
+                    <!-- For item's Color && size  -->
+                    <div class=" selected">
+
+                        <div title="You have selected this product to be shipped in the color coconut."
+                            style=" background-color: #f7d6bf;" class="color">
+                        </div>
+                        <div class="size">S</div>
+                        <!-- like it || not -->
+                        <div class="like" id="liked1">
+                            <!-- Clickable  heart managed using changeClass function -->
+                            <i onclick="changeClass(this)" class="fa fa-heart-o fa_custom "></i>
+
+                        </div>
+
+                    </div>
+
+                    <!-- For item's images -->
+                    <div class="itemImg">
+
+                        <img src="res/T-Shirt_1.jpg" alt="T-Shirt_1">
+
+                    </div>
+
+                    <!-- For item's description -->
+                    <div>
+                        <div class="description">
+
+                            <div class="remove">
+
+                                <h1 id='itemName1'> Nike Air T-Shirt </h1>
+
+                                <!-- Clickable Heart -->
+                                <i class="fa fa-trash-o fa-lg" onclick="remove('article1')"
+                                    style="color: red; font-size: 24px; "></i>
+
+                            </div>
+
+                            <h6>
+                                Nike Air T-Shirt for more details visit
+                                <a href="https://www.spartoo.com/Nike-W-NSW-AIR-TOP-SS-CROP-x17081319.php"> spartoo web
+                                    site
+                                </a>
+                            </h6>
+
+
+                        </div>
+
+                        <!-- calculation (+) (-) & Total for the item -->
+
+                        <div class="content">
+
+                            <!-- Show if the item is set 0 -->
+                            <span class="popuptext" id="myPopup1"> Zero item, it will be considered as deletes!</span>
+
+                            <!-- plus or minus and update the full price for the item using count function -->
+                            <span class="qt-minus " id="qt-minus1"
+                                onclick="count('-','qt1','price1','full-price1')">-</span>
+
+                            <span class="qt" id="qt1"> 1 </span> <!-- Set the item into one selected -->
+                            <span onclick="count('+','qt1','price1','full-price1')" class="qt-plus"
+                                id="qt-plus1">+</span>
+
+                            <h4 class="full-price" id="full-price1">
+                                17.99 €
+                                <!-- Set full price to the value of one item -->
+                            </h4>
+
+                            <h4 class="price" id="price1">
+                                17.99 €
+                            </h4>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+                <!-- Second article -->
+                <div class="grid-container " id="article2">
+                    <!-- First column of the Grid -->
+                    <!-- Selected Item  -->
+
+                    <!-- For items's Color && size  -->
+                    <div class=" selected">
+
+                        <div title="You have selected this product to be shipped in the color Burgundy."
+                            style=" background-color: #752b2b;" class="color">
+                        </div>
+
+                        <div class="size">S</div>
+
+                        <!-- like it || not -->
+                        <div class="like" id="liked2">
+                            <i onclick="changeClass(this)" class="fa fa-heart-o fa_custom "></i>
+                        </div>
+
+                    </div>
+                    <!-- For item's images -->
+                    <div>
+                        <img src="res/Leggings_1.jpg" alt="Leggings_1">
+                    </div>
+
+                    <!-- For items's description -->
+                    <div>
+
+                        <div class="description">
+
+                            <div class="remove">
+
+                                <h1 id='itemName2'> Only Play ONPJADA</h1>
+
+                                <i class="fa fa-trash-o fa-lg" onclick="remove('article2')"
+                                    style="color: red; font-size: 24px;"></i>
+
+                            </div>
+
+                            <h6>
+                                Only Play ONPJADA, Only Play collection, for more details visit
+                                <a href="https://www.spartoo.com/Only-Play-ONPJADA-x15688145.php"> spartoo web site
+                                </a>
+                            </h6>
+
+                        </div>
+
+                        <div class="content">
+
+                            <!-- Show if the item is set 0 -->
+                            <span class="popuptext" id="myPopup2"> Zero item, it will be considered as deletes!</span>
+
+                            <span onclick="count('-','qt2','price2','full-price2')" class="qt-minus"
+                                id="qt-minus2">-</span>
+                            <span class="qt" id="qt2">1</span>
+                            <span onclick="count('+','qt2','price2','full-price2')" class="qt-plus"
+                                id="qt-plus2">+</span>
+
+                            <h4 class="full-price" id="full-price2">
+                                20.00 €
+                            </h4>
+
+                            <h4 class="price" id="price2">
+                                20.00 €
+                            </h4>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Third article -->
+                <div class="grid-container " id="article3">
+                    <!-- First column of the Grid -->
+                    <!-- Selected Items  -->
+
+                    <!-- For items's Color && size  -->
+                    <div class=" selected">
+
+                        <div title="You have selected this product to be shipped in the color Gray / pink."
+                            style=" background-color: grey;" class="color">
+                        </div>
+
+                        <div class="size">S</div>
+
+                        <!-- like it || not -->
+                        <div class="like" id="liked3">
+                            <i onclick="changeClass(this)" class="fa fa-heart-o fa_custom "></i>
+                        </div>
+
+                    </div>
+
+                    <!-- For items's images -->
+                    <div>
+                        <img src="res/Addidas.jpg" alt="Addidas">
+                    </div>
+
+                    <!-- For items's description -->
+                    <div>
+
+                        <div class="description">
+
+                            <div class="remove">
+
+                                <h1 id='itemName3'> Adidas Performance ROCKADIA TRAIL 3.0 </h1>
+                                <i class="fa fa-trash-o fa-lg" onclick="remove('article3')"
+                                    style="color: red; font-size: 24px;"></i>
+
+                            </div>
+
+                            <h6>
+                                Adidas Performance ROCKADIA TRAIL 3.0 for more details visit
+
+                                <a href="https://www.spartoo.com/adidas-Performance-ROCKADIA-TRAIL-3.0-x16616894.php">
+                                    spartoo web site
+                                </a>
+                            </h6>
+
+                        </div>
+
+                        <div class="content">
+
+                            <!-- Show if the item is set 0 -->
+                            <span class="popuptext" id="myPopup3"> Zero item, it will be considered as deletes!</span>
+                            <span onclick="count('-','qt3','price3','full-price3')" class="qt-minus"
+                                id="qt-minus3">-</span>
+                            <span class="qt" id="qt3">1</span>
+                            <span onclick="count('+','qt3','price3','full-price3')" class="qt-plus"
+                                id="qt-plus3">+</span>
+
+                            <h4 class="full-price" id="full-price3">
+                                51.00 €
+                            </h4>
+
+                            <h4 class="price" id="price3">
+                                51.00 €
+                            </h4>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+            <div style="background-color: #fff; ">
+
+                <!-- Final Shopping list and payement -->
+
+
+                <div class="container">
+
+                    <div>
+
+                        <h5>Subtotal: <span id="subTotal"> 88.99 € </span></h5>
+
+                        <div style="display: flex; justify-content: left;">
+
+                            <h5 class="tax"> Items: <span id="items"> 3 </span>
+
+
+                            </h5>
+
+                            <select name="selectedItem" id="select">
+
+                                <option value=""> Shopping List </option>
+                                <option value="Nike Air T-Shirt"> Nike Air T-Shirt </option>
+                                <option value="Only Play ONPJADA"> Only Play ONPJADA </option>
+                                <option value="Adidas Performance ROCKADIA TRAIL 3.0"> Adidas Performance ROCKADIA TRAIL
+                                    3.0
+                                </option>
+
+                            </select>
+
+                        </div>
+                        <h5 class="shipping"> Shipping: <span> 5.00 €</span></h5>
+
+                    </div>
+
+                    <div style="float: right;">
+
+                        <h4>Total: <span id="totalCart"> 93.90 €</span></h4>
+                        <a class="btn">Checkout</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </main>
+
+
+    <!-- Semantic Tag footer -->
+    <footer>
+
+        <div class="footer">
+
+            <span class="copyright"> © 2020 Fatima Zohra BELABDI </span>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

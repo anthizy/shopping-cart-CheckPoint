@@ -1,0 +1,14 @@
+// Special case when the quantitie is 0, number of total shopp items should modifie
+            // Remove item from the select shopping list
+            // Can't have negative item -1,-2 ....
+
+
+// Special case when the quantitie is 0, and the user hit (+)
+            //change the style of the item (Remove the alert color)
+            // Add the item name to the select shopping item
+            // Modifie number of items selected on the cart
+
+
+// If items all deleted then set shopping to zero
+
+// Arround the total Shopping .2 each time 

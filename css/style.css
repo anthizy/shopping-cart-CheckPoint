@@ -1,0 +1,387 @@
+.body {
+    margin: 0;
+    padding: 0;
+    /* The overflow-x property specifies whether to clip the content, add a scroll bar, or display overflow content of a block-level element,*/
+    overflow-x: hidden;
+}
+
+/* used in the header of the shopping cart */
+
+/* Sopping */
+
+.cartTitle {
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 25px;
+    /* padding: 1em 0; */
+    border-bottom: 1px solid #318FB5;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+/* Cart */
+
+.cartTitle span, .headingCart span {
+    font-family: sans-serif;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: lowercase;
+    color: #777;
+}
+
+/*CART HEADER*/
+
+.headingCart {
+    /* with overflow: auto and height: auto the container will fit to the content inside.  */
+    overflow: auto;
+    height: auto;
+    margin-top: 0;
+    border-bottom: 1px solid #318FB5;
+    position: relative;
+}
+
+.headingCart>h1 {
+    font-family: sans-serif;
+    font-size: 20px;
+    float: left;
+    margin-left: 2%;
+}
+
+.headingCart>a {
+    text-decoration: none;
+    font-family: sans-serif;
+    letter-spacing: -.015em;
+    font-size: .75em;
+    padding: 1em;
+    color: #fff;
+    background: #005086;
+    font-weight: bold;
+    border-radius: 50px;
+    /* Center the item in the Mycart div */
+    position: absolute;
+    top: 15%;
+    right: 2%;
+}
+
+/* Use grid with three columns in Shooping table */
+
+#articles {
+    display: grid;
+    margin: 0;
+    grid-template-columns: 65% 35%;
+    justify-content: center;
+    grid-auto-flow: dense;
+    padding: 1px;
+    /* border: 1px solid #ccc;
+    border-style: none none solid none; */
+}
+
+#articles>div {
+    /* background-color: rgba(134, 73, 73, 0.8); */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+/* Use grid with three columns in Shooping table */
+
+.grid-container {
+    display: grid;
+    margin: 0;
+    grid-template-columns: 7% 17% 60%;
+    justify-content: center;
+    padding: 1px;
+}
+
+.grid-container>div {
+    /* background-color: rgba(134, 73, 73, 0.8); */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    height: auto;
+}
+
+.grid-container>img {
+    float: left;
+}
+
+/* The popup, used when the user hit (-) and the quantitie is zéro */
+
+.popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #FF5726;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    z-index: 1;
+    bottom: 125%;
+    left: -30%;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Popup arrow */
+
+.popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #FF5726 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+
+.show {
+    visibility: visible;
+}
+
+.selected {
+    background-color: #fff;
+    position: relative;
+    float: left;
+}
+
+.selected>div {
+    width: 35%;
+    height: 30px;
+    position: absolute;
+    margin: -25px 0 0 -25px;
+    /* apply negative top and left margins to truly center the element */
+}
+
+/* Items images */
+
+.itemImg {
+    display: grid;
+    justify-content: center;
+}
+
+img {
+    width: 90%;
+    height: 80%;
+    /*max-width: 300px;
+    max-height: 300px; */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+span {
+    font-size: 16px;
+    color: #777;
+    margin-top: -10px;
+}
+
+.description {
+    height: 60%;
+    /* background-color: chartreuse; */
+    /* border-bottom: 1px solid #318FB5; */
+    display: grid;
+    text-align: left;
+}
+
+.remove {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.description h1 {
+    color: #318fb5;
+    font-size: 22px;
+    font-weight: 300;
+    margin-top: 0;
+}
+
+.description h6 {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.description a {
+    text-decoration: none;
+    color: #318fb5;
+}
+
+.content {
+    height: 20%;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Price display on the right*/
+
+.content h4 {
+    margin-top: -5%;
+    padding-top: 0;
+    float: right;
+}
+
+/* Quantities display block on the left*/
+
+.qt, .qt-plus, .qt-minus {
+    float: left;
+}
+
+.qt {
+    font-size: 19px;
+    /* The line-height CSS property sets the height of a line box. */
+    line-height: 50px;
+    width: 70px;
+    text-align: center;
+}
+
+.qt-plus, .qt-minus {
+    background: #fcfcfc;
+    font-size: 30px;
+    font-weight: 300;
+    height: 80%;
+    padding: 0 20px;
+}
+
+/* .qt-plus:hover, .qt-minus:hover {
+    background: #005086;
+    color: #fff;
+    cursor: pointer;
+} */
+
+.stop-minus {
+    background: #FF5726;
+    color: #fff;
+    cursor: pointer;
+}
+
+.qt-plus {
+    line-height: 50px;
+}
+
+.qt-minus {
+    line-height: 47px;
+}
+
+.price {
+    background: #fcfcfc;
+    color: #000;
+    float: right;
+    font-size: 12px;
+    font-weight: 300;
+    padding: 10px 20px;
+}
+
+.full-price {
+    background: #2072a8;
+    color: #fff;
+    float: right;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: px;
+    margin: 6px;
+    padding: 0 30px;
+}
+
+.color {
+    width: 50%;
+    height: 30%;
+    top: 20%;
+    left: 50%;
+}
+
+.size {
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+    background: #fcfcfc;
+    border: 1px solid #318FB5;
+    border-style: none none solid none;
+    box-shadow: 0 1px 3px #318FB5;
+    top: 50%;
+    left: 50%;
+}
+
+.like {
+    width: 20%;
+    height: 10%;
+    top: 70%;
+    left: 50%;
+}
+
+.fa_custom {
+    color: #f7193e;
+    font-size: 30px;
+}
+
+.container {
+    font-family: 'Open Sans', sans-serif;
+    margin: 12% 10%;
+    text-align: left;
+    position: sticky;
+    top: 0;
+}
+
+/* Checkout button */
+
+.btn {
+    background: #005086;
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 10px 0;
+    width: 100px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.btn:hover {
+    color: #fff;
+    background: #318FB5;
+}
+
+/* Custom Shopping Selected Items */
+
+#select {
+    margin-top: 12%;
+    width: 50%;
+    height: 30px;
+    background: #fff;
+    overflow: hidden;
+    /* border-radius: .25em; */
+    border-color: #bfc0c0;
+}
+
+select {
+    margin-left: 20px;
+    color: rgb(7, 6, 6);
+}
+
+select option {
+    margin: 40px;
+    background-color: #f4f6f8 !important;
+    color: rgb(7, 6, 6);
+}
+
+footer {
+    margin-top: 100px;
+}
+
+.footer {
+    width: 100%;
+    bottom: 0;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    padding: 23px 0 0;
+    font-size: .9em;
+    color: #C889AB;
+}
