@@ -326,7 +326,9 @@ span {
     position: sticky;
     top: 0;
 }
-
+.container > div{
+    margin-top: -10%;
+}
 /* Checkout button */
 
 .btn {
