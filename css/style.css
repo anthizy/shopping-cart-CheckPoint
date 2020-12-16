@@ -221,7 +221,7 @@ span {
 /* Price display on the right*/
 
 .content h4 {
-    margin-top: -5%;
+   /* margin-top: -5%;*/
     padding-top: 0;
     float: right;
 }
