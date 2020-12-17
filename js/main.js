@@ -190,7 +190,7 @@ function remove(id) {
 
 
         // Set the new total by adding the shipping price into it
-        document.getElementById('totalCart').innerText = Number(newprice) + 5;
+        document.getElementById('totalCart').innerText = Number(newprice).toFixed(2) + 5;
     }
 
 
