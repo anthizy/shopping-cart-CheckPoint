@@ -3,7 +3,7 @@
 
 > A simple shopping cart .
 
--  Manipulate the quantitie of each article selected for shooping  & calculate the total to price for eache article.
+-  Manipulate the quantitie of each article selected for shooping  & calculate the total price for eache article.
 -  Delete item from Shopping cart.
 - ✨   Add ❤️️  or remove ❌ article from favorite ✨
 ###
